@@ -3,6 +3,7 @@ import { Map, View } from "ol";
 import TileLayer from "ol/layer/Tile";
 import { OSM } from "ol/source";
 import { useGeographic } from "ol/proj";
+import KommuneLayer from "../kommuner/KommuneLayer";
 
 useGeographic();
 
@@ -36,6 +37,7 @@ const MapApplication = () => {
         <a href={"#"} onClick={handleFocusUser}>
           Focus on me
         </a>
+        <KommuneLayer />
       </nav>
       <div ref={mapRef}>Map Should be here</div>
     </>
