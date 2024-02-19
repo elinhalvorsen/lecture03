@@ -11,6 +11,8 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "npm test && vite build",
+    "test": "prettier --check . && tsc --noEmit"
   }
 }
