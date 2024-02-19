@@ -18,7 +18,7 @@ const MapApplication = () => {
 
   return (
     <>
-      <div ref={mapRef}>Map Should be here</div>
+      <div ref={mapRef}>Map Should be here!!!</div>
     </>
   );
 };
