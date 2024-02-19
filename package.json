@@ -2,6 +2,7 @@
   "devDependencies": {
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
+    "husky": "^9.0.11",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3",
     "vite": "^5.1.3"
@@ -13,6 +14,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm test && vite build",
-    "test": "prettier --check . && tsc --noEmit"
+    "test": "prettier --check . && tsc --noEmit",
+    "prepare": "husky"
   }
 }
