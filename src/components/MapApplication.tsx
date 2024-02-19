@@ -11,6 +11,17 @@ const map = new Map({
   view: new View({ center: [10, 59], zoom: 8 }),
 });
 
+const handleFocusUser = (e: React.MouseEvent) => {
+  e.preventDefault();
+  navigator.geolocation.getCurrentPosition((pos) => {
+    const { longitude, latitude } = pos.coords;
+    map.getView().animate({
+      center: [longitude, latitude],
+      zoom: 10,
+    });
+  });
+};
+
 const MapApplication = () => {
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
   useEffect(() => {
@@ -21,8 +32,12 @@ const MapApplication = () => {
       <header>
         <h1>Kart</h1>
       </header>
-      <nav></nav>
-      <div ref={mapRef}>Map Should be here!!!</div>
+      <nav>
+        <a href={"#"} onClick={handleFocusUser}>
+          Focus on me
+        </a>
+      </nav>
+      <div ref={mapRef}>Map Should be here</div>
     </>
   );
 };
